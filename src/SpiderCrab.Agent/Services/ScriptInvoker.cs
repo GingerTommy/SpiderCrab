@@ -9,6 +9,11 @@
     {
         public IReadOnlyCollection<string> Execute(string scriptBlock)
         {
+            if (string.IsNullOrWhiteSpace(scriptBlock))
+            {
+                throw new ArgumentNullException(nameof(scriptBlock));
+            }
+
             using (var shell = PowerShell.Create())
             {
                 var output = shell.AddScript(scriptBlock).Invoke();

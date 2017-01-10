@@ -12,20 +12,21 @@
             Log.Logger = LogConfiguration.Default
                 .CreateLogger();
 
-            HostFactory.Run(x =>
+            HostFactory.Run(host =>
             {
-                x.UseSerilog();
-                x.UseNinject(new ServiceModule(Settings.Default));
-                x.Service<ServiceController>(s =>
+                host.UseSerilog();
+                host.UseNinject(new ServiceModule(Settings.Default));
+                host.Service<ServiceController>(service =>
                 {
-                    s.ConstructUsingNinject();
-                    s.WhenStarted(sc => sc.Start());
-                    s.WhenStopped(sc => sc.Stop());
+                    service.ConstructUsingNinject();
+                    service.WhenStarted(sc => sc.Start());
+                    service.WhenStopped(sc => sc.Stop());
                 });
 
-                x.SetServiceName("SpiderCrab.Agent");
-                x.SetDisplayName("SpiderCrab Agent");
-                x.StartAutomaticallyDelayed();
+                host.SetServiceName("SpiderCrab.Agent");
+                host.SetDisplayName("SpiderCrab Agent");
+                host.RunAsLocalSystem();
+                host.StartAutomaticallyDelayed();
             });
         }
     }

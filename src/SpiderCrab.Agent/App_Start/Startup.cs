@@ -1,6 +1,11 @@
 ﻿namespace SpiderCrab.Agent
 {
+    using Ninject;
+    using Ninject.Web.Common.OwinHost;
+    using Ninject.Web.WebApi.OwinHost;
     using Owin;
+    using Properties;
+    using System.Reflection;
     using System.Web.Http;
 
     public class Startup
@@ -13,7 +18,15 @@
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional });
 
-            app.UseWebApi(config);
+            app.UseNinjectMiddleware(CreateKernel)
+                .UseNinjectWebApi(config);
+        }
+
+        private IKernel CreateKernel()
+        {
+            var kernel = new StandardKernel(new ServiceModule(Settings.Default));
+            kernel.Load(Assembly.GetExecutingAssembly());
+            return kernel;
         }
     }
 }

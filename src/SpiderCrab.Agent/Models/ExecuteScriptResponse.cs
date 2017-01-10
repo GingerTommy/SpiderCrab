@@ -1,9 +1,9 @@
 ﻿namespace SpiderCrab.Agent
 {
-    public class ExecuteScriptRequest
+    public class ExecuteScriptResponse
     {
         public string CorrelationId { get; set; }
 
-        public string ScriptBlock { get; set; }
+        public string[] Results { get; set; }
     }
 }

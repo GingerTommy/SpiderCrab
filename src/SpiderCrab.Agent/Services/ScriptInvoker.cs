@@ -7,24 +7,23 @@
 
     public class ScriptInvoker : IScriptInvoker
     {
-        public IReadOnlyCollection<string> Execute(string script)
+        public IReadOnlyCollection<string> Execute(string scriptBlock)
         {
             using (var shell = PowerShell.Create())
             {
-                shell.AddScript(script);
-                var output = shell.Invoke();
-
+                var output = shell.AddScript(scriptBlock).Invoke();
                 if (shell.Streams.Error.Count > 0)
                 {
-                    var errors = shell.Streams.Error
-                        .Select(ex => ex.Exception);
+                    var errors =
+                        from error in shell.Streams.Error
+                        select error.Exception;
                     throw new AggregateException(errors);
                 }
 
-                return output
-                    .Select(o => o.ToString())
-                    .ToList()
-                    .AsReadOnly();
+                var results =
+                    from result in output
+                    select result.ToString();
+                return results.ToList().AsReadOnly();
             }
         }
     }

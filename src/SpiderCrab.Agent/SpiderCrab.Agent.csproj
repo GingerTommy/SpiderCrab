@@ -36,6 +36,7 @@
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\AgentController.cs" />
     <Compile Include="Models\ExecuteScriptRequest.cs" />
+    <Compile Include="Models\ExecuteScriptResponse.cs" />
     <Compile Include="Properties\IAppSettings.cs" />
     <Compile Include="App_Start\LogConfiguration.cs" />
     <Compile Include="Program.cs" />

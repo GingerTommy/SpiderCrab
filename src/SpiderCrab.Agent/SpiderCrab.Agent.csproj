@@ -35,6 +35,7 @@
   <ItemGroup>
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="Controllers\AgentController.cs" />
+    <Compile Include="Models\ExecuteScriptRequest.cs" />
     <Compile Include="Properties\IAppSettings.cs" />
     <Compile Include="App_Start\LogConfiguration.cs" />
     <Compile Include="Program.cs" />
@@ -47,6 +48,8 @@
     <Compile Include="App_Start\ServiceController.cs" />
     <Compile Include="App_Start\ServiceModule.cs" />
     <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Services\IScriptInvoker.cs" />
+    <Compile Include="Services\ScriptInvoker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -18,6 +18,9 @@
                 .ToConstant(this.settings);
             this.Bind<ILogger>()
                 .ToConstant(Log.Logger);
+            this.Bind<IScriptInvoker>()
+                .To<ScriptInvoker>()
+                .InSingletonScope();
         }
     }
 }

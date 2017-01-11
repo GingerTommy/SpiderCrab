@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>SpiderCrab</id>
+    <version>1.0.0</version>
+    <authors>GingerTommy</authors>
+    <description>Execute PowerShell scripts via an ASP.NET Web API endpoint</description>
+	<projectUrl>https://github.com/GingerTommy/SpiderCrab</projectUrl>
+	<licenseUrl>https://github.com/GingerTommy/SpiderCrab/blob/master/LICENSE</licenseUrl>
+	<tags>automation devops management powershell</tags>
+  </metadata>
+  <files>
+    <file src="..\src\SpiderCrab.Agent\bin\Release\*.dll" target="lib" />
+    <file src="..\src\SpiderCrab.Agent\bin\Release\*.exe" target="lib" />
+    <file src="..\src\SpiderCrab.Agent\bin\Release\*.config" target="lib" />
+    <file src="*.ps1" target="tools" />
+  </files>
+</package>

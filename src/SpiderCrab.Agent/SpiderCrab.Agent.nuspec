@@ -3,7 +3,7 @@
   <metadata>
     <id>SpiderCrab</id>
     <version>1.0.0</version>
-    <authors>Thomas O'Connor</authors>
+    <authors>GingerTommy</authors>
     <description>Execute PowerShell scripts via an ASP.NET Web API endpoint</description>
   </metadata>
   <files>

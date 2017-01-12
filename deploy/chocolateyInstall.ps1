@@ -41,11 +41,8 @@ try
 {
 	& $installExe install
 	Start-Service -Name $serviceName
-	Write-ChocolateySuccess -PackageName $packageName
 }
 catch
 {
-	Write-ChocolateyFailure `
-		-PackageName $packageName `
-		-FailureMessage $_.Exception.Message
+	Write-Warning "Failed to start the service: check event logs"
 }

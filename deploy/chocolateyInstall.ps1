@@ -40,7 +40,6 @@ Write-Output "Executable: $installExe"
 try
 {
 	& $installExe install
-	Start-Service -Name $serviceName
 }
 catch
 {

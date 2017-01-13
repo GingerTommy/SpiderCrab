@@ -4,13 +4,13 @@
 
 Execute PowerShell scripts via an ASP.NET Web API endpoint
 
-[![Logo](spidercrab.gif?raw=true)]
+![SpiderCrab Logo](spidercrab.gif?raw=true "SpiderCrab Logo")
 
 ## Setup
 
 The SpiderCrab agent install a Windows service.
 ### Install with Chocolatey
-```ps
+```powershell
 choco install spidercrab -y
 ```
 

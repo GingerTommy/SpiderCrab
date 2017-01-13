@@ -8,13 +8,20 @@ Execute PowerShell scripts via an ASP.NET Web API endpoint
 
 ## Setup
 
-The SpiderCrab agent install a Windows service.
+The SpiderCrab agent installs a Windows service.
 ### Install with Chocolatey
 ```powershell
 choco install spidercrab -y
 ```
 
+> A local security group `SpiderCrab Operators` is created. Grant users and groups permissions to
+  invoke scripts by adding them here.
+
 ## Customize
 
 Modify SpiderCrab.Agent.exe.config to specify:
 - the port that Web API listens on
+
+Modify the Windows service entry to configure:
+- the account the service runs as (you will probably have to configure urlacl for accounts other
+  than `Local System`)

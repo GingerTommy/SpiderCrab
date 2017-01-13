@@ -4,13 +4,17 @@
 
 Execute PowerShell scripts via an ASP.NET Web API endpoint
 
+[![Logo](spidercrab.gif?raw=true)]
+
 ## Setup
 
 The SpiderCrab agent install a Windows service.
-> Install details to follow once we have a Chocolatey package
+### Install with Chocolatey
+```ps
+choco install spidercrab -y
+```
 
 ## Customize
 
-You can specify:
+Modify SpiderCrab.Agent.exe.config to specify:
 - the port that Web API listens on
-- and others to follow

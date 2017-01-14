@@ -1,7 +1,7 @@
 ﻿namespace SpiderCrab.Agent
 {
-    using Microsoft.Owin.Hosting;
     using System;
+    using Microsoft.Owin.Hosting;
 
     internal class ServiceController
     {

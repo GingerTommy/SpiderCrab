@@ -1,9 +1,9 @@
 ﻿namespace SpiderCrab.Agent
 {
-    using Serilog;
     using System;
     using System.Linq;
     using System.Web.Http;
+    using Serilog;
 
     public class AgentController : ApiController
     {
@@ -63,7 +63,7 @@
                 var errors =
                     from error in ex.InnerExceptions
                     select error.Message;
-                var message = string.Join(Environment.NewLine, ex.Message);
+                var message = string.Join(Environment.NewLine, errors);
                 return this.BadRequest(message);
             }
             catch (Exception ex)

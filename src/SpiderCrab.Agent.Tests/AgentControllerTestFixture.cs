@@ -1,11 +1,11 @@
 ﻿namespace SpiderCrab.Agent.Tests
 {
-    using Moq;
-    using Serilog;
     using System;
     using System.Collections.Generic;
+    using Moq;
+    using Serilog;
 
-    public class AgentControllerTestFixture : IDisposable
+    public sealed class AgentControllerTestFixture : IDisposable
     {
         public AgentControllerTestFixture()
         {
